@@ -1,2 +1,27 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import Header from '$lib/Header.svelte';
+	import About from '$lib/About.svelte';
+	import Projects from '$lib/Projects.svelte';
+</script>
+
+<Header />
+<main>
+	<About />
+
+	<div class="line"></div>
+
+	<Projects/>
+</main>
+
+<style>
+	.line {
+		margin-bottom: 16px;
+		border-bottom: 1px solid var(--border);
+		width: 90vw;
+	}
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+</style>

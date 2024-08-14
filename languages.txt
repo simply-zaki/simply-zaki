@@ -1,0 +1,8 @@
+FRONTEND
+svelte
+sveltekit
+the big 3 html css js
+
+BACKEND
+python flask
+mysql mongodb
