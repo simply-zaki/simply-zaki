@@ -2,23 +2,19 @@
 	import Header from '$lib/Header.svelte';
 	import About from '$lib/About.svelte';
 	import Projects from '$lib/Projects.svelte';
+	import Tools_languages from '$lib/Tools_languages.svelte';
 </script>
 
 <Header />
 <main>
 	<About />
 
-	<div class="line"></div>
+	<Projects />
 
-	<Projects/>
+	<Tools_languages />
 </main>
 
 <style>
-	.line {
-		margin-bottom: 16px;
-		border-bottom: 1px solid var(--border);
-		width: 90vw;
-	}
 	main {
 		display: flex;
 		flex-direction: column;

@@ -3,7 +3,7 @@
     <img  src="/cat.svg" alt="icon">
     <a href="#about">about</a>
     <a href="#projects">projects</a>
-    <a href="#tools">tools</a>
+    <a href="#tools_languages">tools & languages</a>
 </header>
 
 <style>

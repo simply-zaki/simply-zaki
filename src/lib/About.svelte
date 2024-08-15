@@ -20,6 +20,7 @@
         display: flex;
         justify-content: space-between;
 		padding: 16px 64px 16px 64px;
+		margin-bottom: 16px;
 	}
     span{
         width: 50%;

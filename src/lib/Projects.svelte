@@ -27,9 +27,9 @@
 	}
 </script>
 
-<h1>Projects</h1>
+<h1 id="projects">Projects</h1>
 
-<section id="projects">
+<section >
 	<div class="project-container">
 		<img class="project_img" src={websites[currentIndex].src} alt="projects" />
 		<div class="link">
@@ -137,5 +137,6 @@
 		width: 90vw;
 		color: white;
 		background-color: black;
+		margin-bottom: 16px;
 	}
 </style>
