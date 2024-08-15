@@ -6,7 +6,7 @@
 		</p>
 	</span>
 
-	<img src="/cat.svg" alt="icon" />
+	<img draggable="false" src="/cat.svg" alt="icon" />
 </section>
 
 <style>
@@ -27,5 +27,6 @@
     }
     img{
         height: 512px;
+		cursor: grab;
     }
 </style>
