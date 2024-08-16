@@ -8,10 +8,14 @@
 
 <style>
 header{
+    position: fixed;
     display: flex;
     align-items: center;
     padding: 16px;
     border-bottom: 1px solid var(--border);
+    width: 100vw;
+    background-color: rgb(0, 0, 0);
+    z-index: 999;
 }
 img{
     margin-right: auto;
