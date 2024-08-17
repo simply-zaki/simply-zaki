@@ -4,6 +4,7 @@
 	import Projects from '$lib/Projects.svelte';
 	import Tools_languages from '$lib/Tools_languages.svelte';
 	import Skills from '$lib/Skills.svelte';
+	import Footer from '$lib/Footer.svelte';
 </script>
 
 <Header />
@@ -15,6 +16,8 @@
 	<Tools_languages />
 
 	<Skills />
+
+	<Footer />
 </main>
 
 <style>

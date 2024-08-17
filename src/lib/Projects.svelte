@@ -78,9 +78,11 @@
 		fill: #a9a9a9; /* Darker gray on active */
 	}
 	h1 {
+		scroll-margin-top: 100px;
 		margin-bottom: 16px;
 		text-align: center;
         border-bottom: 3px solid white;
+		padding-bottom: 5px;
 	}
 	.project-container {
 		position: relative;
