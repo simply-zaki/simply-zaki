@@ -80,7 +80,7 @@
 	h1 {
 		margin-bottom: 16px;
 		text-align: center;
-		color: white;
+        border-bottom: 3px solid white;
 	}
 	.project-container {
 		position: relative;

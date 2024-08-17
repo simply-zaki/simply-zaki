@@ -4,6 +4,7 @@
     <a href="#about">about</a>
     <a href="#projects">projects</a>
     <a href="#tools_languages">tools & languages</a>
+    <a href="#skills">skills</a>
 </header>
 
 <style>
