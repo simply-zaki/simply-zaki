@@ -8,11 +8,17 @@
 	let canvas;
 
 	onMount(() => {
+		
 		const scene = new THREE.Scene();
 		const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 		const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
 
-		renderer.setSize(100, 100);
+		
+		if (window.innerWidth <= 450 ) {
+			renderer.setSize(50, 50);
+		}else{
+			renderer.setSize(100, 100);
+		}
 		renderer.setClearColor(new THREE.Color(0x000000), 0);
 
 		camera.position.z = 1.2;
@@ -136,11 +142,45 @@
 		padding: 32px;
 		align-items: center;
 		justify-items: center;
+		justify-content: center;
 	}
 	img {
 		height: 64px;
 	}
 	canvas {
 		cursor: grab;
+	}
+	@media(max-width: 1250px){
+		div{
+			grid-template-columns: 100px 100px 100px 100px;
+			grid-template-rows: 100px 100px 100px;
+		}
+	}
+	@media(max-width: 1000px){
+		div{
+			grid-template-columns: 100px 100px 100px;
+			grid-template-rows: 100px 100px 100px 100px;
+		}
+	}
+	@media(max-width:  768px){
+		div{
+			grid-template-columns: 100px 100px;
+			grid-template-rows: 100px 100px 100px 100px 100px;
+		}
+	}
+	@media(max-width:  620px){
+		img{
+			height: 48px;
+		}
+	}
+	@media(max-width:  450px){
+		img{
+			height: 32px;
+		}
+		div{
+			grid-template-columns: 50px 50px 50px;
+			grid-template-rows: 50px 50px 50px 50px;
+			padding: 16px;
+		}
 	}
 </style>
