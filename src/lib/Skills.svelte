@@ -1,4 +1,8 @@
-<h1 id="skills">Skills</h1>
+<script>
+	import Title from "$lib/Title.svelte"
+</script>
+<Title id="skills" text = "Skills" />
+
 <ul>
     <li>
         <span>
@@ -32,13 +36,6 @@
 
 
 <style>
-	h1 {
-		scroll-margin-top: 100px;
-		margin-bottom: 16px;
-		text-align: center;
-		border-bottom: 3px solid white;
-		padding-bottom: 5px;
-	}
 	ul {
 		display: grid;
 		grid-template-columns: 300px 300px;

@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import Title from "$lib/Title.svelte"
 	import * as THREE from 'three';
 	import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
@@ -86,8 +87,7 @@
 		render();
 	});
 </script>
-
-<h1 id="tools_languages">Tools & languages</h1>
+<Title id="tools_languages" text = "Tools & languages" />
 <section>
 	<div class="tools">
 		<img src="/github.svg" alt="icon" />
@@ -117,13 +117,6 @@
 </section>
 
 <style>
-	h1 {
-		scroll-margin-top: 100px;
-		margin-bottom: 16px;
-		text-align: center;
-		border-bottom: 3px solid white;
-		padding-bottom: 5px;
-	}
 	section {
 		position: relative;
 		display: flex;
