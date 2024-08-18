@@ -1,5 +1,5 @@
 <header>
-	simply zaki
+	<span>simply zaki</span>
 	<img src="/cat.svg" alt="icon" />
 	<a href="#about">about</a>
 	<a href="#projects">projects</a>
@@ -10,6 +10,7 @@
 <style>
 	header {
 		position: fixed;
+		top: 0;
 		display: flex;
 		align-items: center;
 		padding: 16px;
@@ -33,5 +34,18 @@
 	a:active {
 		transform: scale(0.97);
 		fill: #a9a9a9; /* Darker gray on active */
+	}
+	@media (max-width: 600px) {
+		a{
+			font-size: 12px;
+		}
+		span{
+			display: none;
+		}
+	}
+	@media (max-width: 384px) {
+		img{
+			height: 32px;
+		}
 	}
 </style>
