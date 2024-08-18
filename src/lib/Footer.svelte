@@ -3,6 +3,7 @@
 	<span>
 		<a href="https://github.com/simply-zaki"><img src="/github.svg" alt="contact" /></a>
         <a href="https://x.com/ZakiSimply"><img src="/X.svg" alt="contact" /></a>
+		<a href="https://discord.gg/JgtB5ktN"><img src="/discord.svg" alt="contact" /></a>
 	</span>
 </footer>
 
