@@ -29,7 +29,6 @@
 </script>
 
 <Title id="projects" text = "Porjects" />
-<h1 id="projects">Projects</h1>
 
 <section >
 	<div class="project-container">
@@ -135,5 +134,34 @@
 		color: white;
 		background-color: black;
 		margin-bottom: 16px;
+	}
+	@media (max-width:1080px){
+		p{
+			font-size: 16px;
+		}
+		.arrow{
+			height: 32px;
+			width: 32px;
+		}
+		span{
+			font-size: 18px;
+		}
+		.controls{
+			width: 110px;
+		}
+	}
+	@media (max-width:689px){
+		.project_img{
+			height: 128px;
+			width: 256px;
+		}
+		p{
+			font-size: 12px;
+		}
+	}
+	@media (max-width: 380px){
+		.text-container{
+			height: 120px;
+		}
 	}
 </style>
