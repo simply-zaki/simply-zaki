@@ -1,20 +1,19 @@
 <script>
 	import { onMount } from 'svelte';
-	import Title from "$lib/Title.svelte"
+	import Title from '$lib/Title.svelte';
 	import * as THREE from 'three';
 	import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 	let canvas;
-
-	onMount(() => {
-		
+	function threeJsIcon() {
 		const scene = new THREE.Scene();
 		const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 		const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
 
-		
-		if (window.innerWidth <= 450 ) {
+		if (window.innerWidth <= 620) {
+			renderer.setSize(70, 70);
+		} else if (window.innerWidth <= 450) {
 			renderer.setSize(50, 50);
 		}else{
 			renderer.setSize(100, 100);
@@ -91,9 +90,14 @@
 		};
 
 		render();
+	}
+	onMount(() => {
+		threeJsIcon();
+		window.addEventListener('resize', threeJsIcon, false);
 	});
 </script>
-<Title id="tools_languages" text = "Tools & languages" />
+
+<Title id="tools_languages" text="Tools & languages" />
 <section>
 	<div class="tools">
 		<img src="/github.svg" alt="icon" />
@@ -150,37 +154,38 @@
 	canvas {
 		cursor: grab;
 	}
-	@media(max-width: 1250px){
-		div{
+	@media (max-width: 1250px) {
+		div {
 			grid-template-columns: 100px 100px 100px 100px;
 			grid-template-rows: 100px 100px 100px;
 		}
 	}
-	@media(max-width: 1000px){
-		div{
+	@media (max-width: 1000px) {
+		div {
 			grid-template-columns: 100px 100px 100px;
 			grid-template-rows: 100px 100px 100px 100px;
 		}
 	}
-	@media(max-width:  768px){
-		div{
+	@media (max-width: 768px) {
+		div {
 			grid-template-columns: 100px 100px;
 			grid-template-rows: 100px 100px 100px 100px 100px;
 		}
 	}
-	@media(max-width:  620px){
-		img{
+	@media (max-width: 620px) {
+		img {
 			height: 48px;
 		}
 	}
-	@media(max-width:  450px){
-		img{
+	@media (max-width: 450px) {
+		img {
 			height: 32px;
 		}
-		div{
-			grid-template-columns: 50px 50px 50px;
-			grid-template-rows: 50px 50px 50px 50px;
+		div {
+			grid-template-columns: 32px 32px 32px;
+			grid-template-rows: 32px 32px 32px 32px;
 			padding: 16px;
+			gap: 12px;
 		}
 	}
 </style>

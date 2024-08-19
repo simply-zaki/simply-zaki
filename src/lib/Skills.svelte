@@ -43,6 +43,8 @@
 		align-items: flex-start;
 		margin-bottom: 16px;
 		gap: 16px;
+		height: auto;
+		width: auto;
 	}
 	li {
 		display: flex;
@@ -63,5 +65,19 @@
 		align-items: center;
 		margin-bottom: 8px;
 		gap: 8px;
+	}
+	@media (max-width: 670px) {
+		ul{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 90vw;
+		}
+		li{
+			font-size: 12px;
+		}
+		img{
+			height: 32px;
+		}
 	}
 </style>

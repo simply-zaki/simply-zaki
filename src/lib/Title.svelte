@@ -13,4 +13,9 @@
         border-bottom: 3px solid white;
 		padding-bottom: 5px;
 	}
+	@media (max-width:912px){
+		h1{
+			font-size: 24px;
+		}
+	}
 </style>
