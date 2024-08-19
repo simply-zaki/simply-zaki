@@ -1,15 +1,15 @@
 <script>
-	import Title from "$lib/Title.svelte"
+	import Title from '$lib/Title.svelte';
 	let websites = [
 		{
 			src: '/project.png',
 			text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sequi quidem consectetur earum corporis ipsa ducimus facilis quis! Molestiae, ex harum? Ullam ad illum eligendi non distinctio? A, ad nobis.',
-			link: "https://cataas.com/cat"
+			link: 'https://cataas.com/cat'
 		},
 		{
 			src: '/cat.svg',
 			text: 'Lorem ipsum dolor sit amet conseet consectetur adipisicing elit.ctetur adipet consectetur adipisicing elit.isicing elit. Fuga sequi quidem consectetur earum corporis ipsa ducimus facilis quis! Molestiae, ex harum? Ullam ad illum eligendi non distinctio? A, ad nobis.',
-			link: "https://www.google.com"
+			link: 'https://www.google.com'
 		}
 	];
 
@@ -28,15 +28,17 @@
 	}
 </script>
 
-<Title id="projects" text = "Porjects" />
+<Title id="projects" text="Porjects" />
 
-<section >
+<section>
 	<div class="project-container">
 		<img class="project_img" src={websites[currentIndex].src} alt="projects" />
+
 		<div class="link">
 			<a style="color: white;" href={websites[currentIndex].link}>Visit website</a>
 		</div>
 	</div>
+	<a style="margin-bottom: 16px;" href={websites[currentIndex].link}>Visit website</a>
 	<div class="text-container">
 		<p>{websites[currentIndex].text}</p>
 	</div>
@@ -94,7 +96,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent yellow */
+		background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent yellow */
 		height: 100%;
 		width: 100%;
 		border-radius: 16px;
@@ -135,32 +137,32 @@
 		background-color: black;
 		margin-bottom: 16px;
 	}
-	@media (max-width:1080px){
-		p{
+	@media (max-width: 1080px) {
+		p {
 			font-size: 16px;
 		}
-		.arrow{
+		.arrow {
 			height: 32px;
 			width: 32px;
 		}
-		span{
+		span {
 			font-size: 18px;
 		}
-		.controls{
+		.controls {
 			width: 110px;
 		}
 	}
-	@media (max-width:689px){
-		.project_img{
+	@media (max-width: 689px) {
+		.project_img {
 			height: 128px;
 			width: 256px;
 		}
-		p{
+		p {
 			font-size: 12px;
 		}
 	}
-	@media (max-width: 380px){
-		.text-container{
+	@media (max-width: 380px) {
+		.text-container {
 			height: 120px;
 		}
 	}

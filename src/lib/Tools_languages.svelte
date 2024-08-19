@@ -11,13 +11,14 @@
 		const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 		const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
 
-		if (window.innerWidth <= 620) {
-			renderer.setSize(70, 70);
-		} else if (window.innerWidth <= 450) {
+		if (window.innerWidth <= 450) {
 			renderer.setSize(50, 50);
-		}else{
+		} else if (window.innerWidth <= 620) {
+			renderer.setSize(70, 70);
+		} else {
 			renderer.setSize(100, 100);
 		}
+
 		renderer.setClearColor(new THREE.Color(0x000000), 0);
 
 		camera.position.z = 1.2;
