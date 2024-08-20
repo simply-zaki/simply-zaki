@@ -2,14 +2,9 @@
 	import Title from '$lib/Title.svelte';
 	let websites = [
 		{
-			src: '/project.png',
-			text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sequi quidem consectetur earum corporis ipsa ducimus facilis quis! Molestiae, ex harum? Ullam ad illum eligendi non distinctio? A, ad nobis.',
-			link: 'https://cataas.com/cat'
-		},
-		{
-			src: '/cat.svg',
-			text: 'Lorem ipsum dolor sit amet conseet consectetur adipisicing elit.ctetur adipet consectetur adipisicing elit.isicing elit. Fuga sequi quidem consectetur earum corporis ipsa ducimus facilis quis! Molestiae, ex harum? Ullam ad illum eligendi non distinctio? A, ad nobis.',
-			link: 'https://www.google.com'
+			src: '/simply calisthenics.png',
+			text: 'A minimalist fitness web app dedicated to calisthenics. It offers a comprehensive exercise library with detailed information and allows you to create, customize, and track your workouts. Designed to support your calisthenics journey, this app provides all the essential tools you need to progress and achieve your fitness goals',
+			link: 'https://simply-calisthenics.vercel.app/'
 		}
 	];
 
@@ -115,7 +110,7 @@
 	.text-container {
 		display: flex;
 		align-items: center;
-		height: 100px;
+		height: 150px;
 		overflow-y: auto;
 	}
 	p {
