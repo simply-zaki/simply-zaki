@@ -16,7 +16,7 @@
             <img src="/user_friendly.svg" alt="ss" />
             <h3>User friendly websites</h3>
         </span>
-        I make websites easy to use, simple, and user friendly from design to functionality, ensuring a seamless experience
+        I make websites easy to use, user friendly but complex in features from design to functionality, ensuring a seamless experience
     </li>
     <li>
         <span>

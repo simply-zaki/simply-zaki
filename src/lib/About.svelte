@@ -1,7 +1,7 @@
 <section id="about">
 	<span>
 		<h1>Hello, im simply zaki</h1>
-		<p>A full stack web developer specializing in making simple websites and web apps. I create minimal easy to use sites that are helpful and make life easy without being confusing</p>
+		<p>A full stack web developer specializing in making user friendly websites and web apps. I create minimal easy to use sites that are helpful and make life easy without being confusing</p>
 	</span>
 
 	<img draggable="false" src="/cat.svg" alt="icon" />
