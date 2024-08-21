@@ -1,11 +1,22 @@
-<header>
-	<span>simply zaki</span>
-	<img src="/cat.svg" alt="icon" />
-	<a href="#about">about</a>
-	<a href="#projects">projects</a>
-	<a href="#tools_languages">tools & languages</a>
-	<a href="#skills">skills</a>
-</header>
+<script>
+	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
+	let loaded = false;
+	onMount(() => {
+		loaded = true;
+	});
+</script>
+
+{#if loaded === true}
+	<header transition:fade={{duration:800, delay:500}} >
+		<span>simply zaki</span>
+		<img src="/cat.svg" alt="icon" />
+		<a href="#about">about</a>
+		<a href="#projects">projects</a>
+		<a href="#tools_languages">tools & languages</a>
+		<a href="#skills">skills</a>
+	</header>
+{/if}
 
 <style>
 	header {
@@ -36,15 +47,15 @@
 		fill: #a9a9a9; /* Darker gray on active */
 	}
 	@media (max-width: 600px) {
-		a{
+		a {
 			font-size: 12px;
 		}
-		span{
+		span {
 			display: none;
 		}
 	}
 	@media (max-width: 384px) {
-		img{
+		img {
 			height: 32px;
 		}
 	}

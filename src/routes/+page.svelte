@@ -5,10 +5,18 @@
 	import Tools_languages from '$lib/Tools_languages.svelte';
 	import Skills from '$lib/Skills.svelte';
 	import Footer from '$lib/Footer.svelte';
+	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
+	let loaded = false
+	onMount(() => {
+		loaded = true
+	});
 </script>
 
+
+{#if loaded === true}
 <Header />
-<main>
+<main transition:fade={{duration:800, delay:1400}}>
 	<About />
 
 	<Projects />
@@ -19,6 +27,8 @@
 
 	<Footer />
 </main>
+{/if}
+
 
 <style>
 	main {
