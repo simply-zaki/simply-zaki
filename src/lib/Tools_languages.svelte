@@ -109,8 +109,7 @@
 		<img src="/figma.svg" alt="icon" />
 		<img src="/blender.svg" alt="icon" />
 		<img src="/docker.svg" alt="icon" />
-		<img src="/chatgbt.svg" alt="icon" />
-		<img style="border-radius: 50%;" src="/claude.png" alt="icon" />
+		<img src="/ai.svg" alt="icon" />
 	</div>
 
 	<div class="languages">
