@@ -11,10 +11,10 @@
 	<header transition:fade={{duration:800, delay:500}} >
 		<span>simply zaki</span>
 		<img src="/cat.svg" alt="icon" />
-		<a href="#about">about</a>
-		<a href="#projects">projects</a>
-		<a href="#technologies">technologies</a>
-		<a href="#skills">skills</a>
+		<a href="#about">About</a>
+		<a href="#projects">Projects</a>
+		<a href="#technologies">Technologies</a>
+		<a href="#skills">Skills</a>
 	</header>
 {/if}
 
