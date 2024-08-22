@@ -1,5 +1,4 @@
 <script>
-	
 	import Header from '$lib/Header.svelte';
 	import About from '$lib/About.svelte';
 	import Projects from '$lib/Projects.svelte';
@@ -8,28 +7,26 @@
 	import Footer from '$lib/Footer.svelte';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	let loaded = false
+	let loaded = false;
 	onMount(() => {
-		loaded = true
+		loaded = true;
 	});
 </script>
 
-
 {#if loaded === true}
-<Header />
-<main transition:fade={{duration:800, delay:1400}}>
-	<About />
+	<Header />
+	<main transition:fade={{ duration: 800, delay: 1400 }}>
+		<About />
 
-	<Projects />
+		<Projects />
 
-	<Technologies />
+		<Technologies />
 
-	<Skills />
+		<Skills />
 
-	<Footer />
-</main>
+		<Footer />
+	</main>
 {/if}
-
 
 <style>
 	main {
