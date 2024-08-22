@@ -10,7 +10,7 @@
 			<img src="/dev.svg" alt="ss" />
 			<h3>Complete website</h3>
 		</span>
-		I can build a complete website and take care of everything like frontend, backend, database, deployment, SEO... from start to finish.
+		I can build a complete website and take care of everything like frontend, backend, deployment, SEO... from start to finish.
 	</li>
 	<li>
 		<span>
