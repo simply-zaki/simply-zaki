@@ -98,7 +98,7 @@
 	});
 </script>
 
-<Title id="tools_languages" text="Tools & languages" />
+<Title id="technologies" text="technologies" />
 <section>
 	<div class="tools">
 		<img src="/github.svg" alt="icon" />
