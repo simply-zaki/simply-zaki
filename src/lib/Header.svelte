@@ -13,7 +13,7 @@
 		<img src="/cat.svg" alt="icon" />
 		<a href="#about">about</a>
 		<a href="#projects">projects</a>
-		<a href="#technologies">tools & languages</a>
+		<a href="#technologies">technologies</a>
 		<a href="#skills">skills</a>
 	</header>
 {/if}

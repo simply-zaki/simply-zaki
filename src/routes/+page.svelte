@@ -2,7 +2,7 @@
 	import Header from '$lib/Header.svelte';
 	import About from '$lib/About.svelte';
 	import Projects from '$lib/Projects.svelte';
-	import Tools_languages from '$lib/Tools_languages.svelte';
+	import Technologies from '$lib/Technologies.svelte';
 	import Skills from '$lib/Skills.svelte';
 	import Footer from '$lib/Footer.svelte';
 	import { onMount } from 'svelte';
@@ -21,7 +21,7 @@
 
 	<Projects />
 
-	<Tools_languages />
+	<Technologies />
 
 	<Skills />
 

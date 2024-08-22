@@ -98,7 +98,7 @@
 	});
 </script>
 
-<Title id="technologies" text="technologies" />
+<Title id="technologies" text="Technologies" />
 <section>
 	<div class="tools">
 		<img src="/github.svg" alt="icon" />
