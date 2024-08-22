@@ -23,7 +23,7 @@
 	}
 </script>
 
-<Title id="projects" text="Porjects" />
+<Title id="projects" text="Projects" />
 
 <section>
 	<div class="project-container">

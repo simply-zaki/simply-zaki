@@ -33,6 +33,7 @@
 	img {
 		margin-right: auto;
 		height: 48px;
+		margin-left: 8px;
 	}
 	a {
 		margin-right: 16px;
@@ -57,6 +58,7 @@
 	@media (max-width: 384px) {
 		img {
 			height: 32px;
+			margin-left: 0;
 		}
 	}
 </style>
