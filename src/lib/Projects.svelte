@@ -130,7 +130,7 @@
 		width: 90vw;
 		color: white;
 		background-color: black;
-		margin-bottom: 16px;
+		margin-bottom: 64px;
 	}
 	@media (max-width: 1080px) {
 		p {

@@ -41,7 +41,7 @@
 		grid-template-columns: 300px 300px;
 		grid-template-rows: 170px 170px;
 		align-items: flex-start;
-		margin-bottom: 16px;
+		margin-bottom: 64px;
 		gap: 16px;
 		height: auto;
 		width: auto;

@@ -5,18 +5,36 @@
 	import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
+	let technologie = 'Svelte';
+	let des = 'Svelte is my favorite frontend framework, very fast to make powerful web applications.';
+	let icon = '/svelte.svg';
+
 	let canvas;
-	function threeJsIcon() {
+	let other_canvas;
+	let showcase_img;
+
+	function threeJsIcon(the_canvas) {
 		const scene = new THREE.Scene();
 		const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-		const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+		const renderer = new THREE.WebGLRenderer({ canvas: the_canvas, antialias: true, alpha: true });
 
-		if (window.innerWidth <= 450) {
-			renderer.setSize(50, 50);
-		} else if (window.innerWidth <= 620) {
-			renderer.setSize(70, 70);
+		// Check if the current canvas is "other_canvas"
+		if (the_canvas === other_canvas) {
+			if (window.innerWidth <= 786) {
+				renderer.setSize(64, 64);
+			} else {
+				renderer.setSize(96, 96);
+			}
 		} else {
-			renderer.setSize(100, 100);
+			if (window.innerWidth <= 360) {
+				renderer.setSize(40, 40);
+			} else if (window.innerWidth <= 480) {
+				renderer.setSize(48, 48);
+			} else if (window.innerWidth <= 1124) {
+				renderer.setSize(48, 48);
+			} else {
+				renderer.setSize(70, 70);
+			}
 		}
 
 		renderer.setClearColor(new THREE.Color(0x000000), 0);
@@ -92,54 +110,107 @@
 
 		render();
 	}
+
+	// Function to handle image click and update variables
+	function handleClick(event) {
+		const img = event.target;
+
+		if (img.tagName === 'CANVAS') {
+			other_canvas.style.display = 'unset';
+			showcase_img.style.display = 'none';
+			threeJsIcon(other_canvas);
+			technologie = img.dataset.name;
+			des = img.dataset.description;
+
+			// Remove outline from all images and canvases
+			const images = document.querySelectorAll('.tools img');
+			images.forEach((image) => (image.style.outlineColor = 'transparent'));
+
+			const canvases = document.querySelectorAll('.tools canvas');
+			canvases.forEach((canvas) => (canvas.style.outlineColor = 'transparent'));
+
+			// Add outline color to the clicked canvas
+			img.style.outlineColor = 'white';
+		} else {
+			showcase_img.style.display = 'unset';
+			other_canvas.style.display = 'none';
+			technologie = img.dataset.name;
+			des = img.dataset.description;
+			icon = img.src;
+
+			// Remove outline from all images and canvases
+			const images = document.querySelectorAll('.tools img');
+			images.forEach((image) => (image.style.outlineColor = 'transparent'));
+
+			const canvases = document.querySelectorAll('.tools canvas');
+			canvases.forEach((canvas) => (canvas.style.outlineColor = 'transparent'));
+
+			// Add outline color to the clicked image
+			img.style.outlineColor = 'white';
+		}
+	}
+
 	onMount(() => {
-		threeJsIcon();
-		window.addEventListener('resize', threeJsIcon, false);
+		threeJsIcon(canvas);
+
+		// Corrected event listener
+		window.addEventListener('resize', () => threeJsIcon(canvas));
+
+		// Cleanup the event listener when the component is destroyed
 	});
 </script>
 
 <Title id="technologies" text="Technologies" />
 <section>
-	<div class="tools">
-		<img src="/github.svg" alt="icon" />
-		<img src="/notion.svg" alt="icon" />
-		<img src="/paintdotnet.ico" alt="icon" />
-		<img src="/vscode.svg" alt="icon" />
-		<img src="/vercel.svg" title="triangle company" alt="icon" />
-		<img src="/figma.svg" alt="icon" />
-		<img src="/blender.svg" alt="icon" />
-		<img src="/docker.svg" alt="icon" />
-		<img src="/ai.svg" alt="icon" />
-	</div>
+	<span>
+		<h1>{technologie}</h1>
+		<img bind:this={showcase_img} class="info_img" src={icon} alt={technologie} />
+		<canvas class="info_img" style="display: none;" bind:this={other_canvas}></canvas>
+		<p>{des}</p>
+	</span>
 
-	<div class="languages">
-		<img src="/svelte.svg" alt="" />
-		<img src="/sveltekit.png" alt="" />
-		<img src="/mongodb.svg" alt="" />
-		<img src="/python.svg" alt="" />
-		<img src="/flask.svg" alt="" />
-		<img src="/mysql.svg" alt="" />
-		<img src="/php.svg" alt="" />
-		<img src="/jquery.svg" alt="" />
-		<!-- The canvas where the 3D model will be rendered -->
-		<canvas bind:this={canvas} width="100" height="100"></canvas>
+	<div class="tools">
+		<!-- Each image has a data-name and data-description attribute -->
+		<img style="outline: 3px solid white;" src="/svelte.svg" alt="Svelte" data-name="Svelte" data-description="Svelte is my favorite frontend framework, very fast to make powerful web applications." on:click={handleClick} />
+		<img src="/sveltekit.png" alt="SvelteKit" data-name="SvelteKit" data-description="SvelteKit is used for authentication, routing, and other essential web features." on:click={handleClick} />
+		<canvas alt="Three.js" data-name="Three.js" data-description="Three.js is used to add 3D elements, like this icon to websites." on:click={handleClick} bind:this={canvas}></canvas>
+		<img src="/jquery.svg" alt="jQuery" data-name="jQuery" data-description="jQuery was the first tool I used when starting web development; I still have skills with it." on:click={handleClick} />
+		
+		<img src="/github.svg" alt="GitHub" data-name="GitHub" data-description="GitHub is essential for saving projects securely and deploying websites." on:click={handleClick} />
+		<img src="/notion.svg" alt="Notion" data-name="Notion" data-description="Notion helps me keep track of projects and tasks efficiently." on:click={handleClick} />
+		<img src="/paintdotnet.ico" alt="Paint.NET" data-name="Paint.NET" data-description="Paint.NET is my go-to tool for editing images." on:click={handleClick} />
+		<img src="/vscode.svg" alt="VS Code" data-name="VS Code" data-description="VS Code is the only code editor I use because it makes my work faster." on:click={handleClick} />
+		<img src="/vercel.svg" alt="Vercel" data-name="Vercel" data-description="Vercel makes deploying websites easy, fast, and feature-rich." on:click={handleClick} />
+		<img src="/figma.svg" alt="Figma" data-name="Figma" data-description="Figma is essential for creating and editing SVGs and other UI/UX designs." on:click={handleClick} />
+		<img src="/blender.svg" alt="Blender" data-name="Blender" data-description="Blender is used for creating or editing 3D objects; I have experience from my game development days." on:click={handleClick} />
+		<img src="/docker.svg" alt="Docker" data-name="Docker" data-description="Docker helps me run local servers efficiently." on:click={handleClick} />
+		<img src="/ai.svg" alt="AI" data-name="AI" data-description="AI is my go-to tool for speeding up work significantly." on:click={handleClick} />
+		
+		<img src="/mongodb.svg" alt="MongoDB" data-name="MongoDB" data-description="MongoDB is my database of choice because it's easy to use and flexible." on:click={handleClick} />
+		<img src="/python.svg" alt="Python" data-name="Python" data-description="Python is my preferred language for backend APIs, thanks to its simplicity and extensive libraries." on:click={handleClick} />
+		<img src="/flask.svg" alt="Flask" data-name="Flask" data-description="Flask is the framework I use for Python backend development due to its flexibility and minimalism." on:click={handleClick} />
+		<img src="/mysql.svg" alt="MySQL" data-name="MySQL" data-description="MySQL was my first database system; I still have skills with it." on:click={handleClick} />
+		<img src="/php.svg" alt="PHP" data-name="PHP" data-description="PHP was one of the first scripting languages I used for web development, and I still maintain my skills with it." on:click={handleClick} />
+		
 	</div>
 </section>
 
 <style>
+	/* Default styles */
 	section {
 		position: relative;
 		display: flex;
 		align-items: flex-start;
 		justify-content: space-between;
 		color: white;
-		margin-bottom: 16px;
+		margin-bottom: 64px;
 		width: 90vw;
+		height: 440px;
 	}
 	div {
 		display: grid;
-		grid-template-columns: 100px 100px 100px 100px 100px;
-		grid-template-rows: 100px 100px;
+		grid-template-columns: repeat(5, 70px);
+		grid-template-rows: repeat(4, 70px);
 		border: 1px solid var(--border);
 		border-radius: 16px;
 		width: 45%;
@@ -147,45 +218,125 @@
 		align-items: center;
 		justify-items: center;
 		justify-content: center;
+		align-content: center;
+		height: 100%;
+		gap: 16px;
+	}
+	span {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		padding: 24px;
+		border: 1px solid var(--border);
+		border-radius: 16px;
+		width: 45%;
+		font-size: 20px;
+		text-align: center;
+		height: 100%;
+	}
+	span h1 {
+		margin-bottom: 16px;
+	}
+	.info_img {
+		height: 96px;
+		width: 96px;
+		margin-bottom: 16px;
 	}
 	img {
-		height: 64px;
+		height: 70px;
+		width: 70px;
+		padding: 4px;
+		border-radius: 16px;
+		cursor: pointer;
+		outline: 3px solid transparent;
+		transition: outline-color 0.2s ease-in;
 	}
 	canvas {
 		cursor: grab;
+		border-radius: 16px;
+		outline: 3px solid transparent;
+		transition: outline-color 0.2s ease-in;
 	}
-	@media (max-width: 1250px) {
+	span p {
+		display: flex;
+		align-items: center;
+		height: 80px;
+	}
+	/* Styles for screens up to 1124px wide */
+	@media (max-width: 1124px) {
 		div {
-			grid-template-columns: 100px 100px 100px 100px;
-			grid-template-rows: 100px 100px 100px;
+			grid-template-columns: repeat(5, 48px);
+			grid-template-rows: repeat(4, 48px);
+			height: 80%;
 		}
-	}
-	@media (max-width: 1000px) {
-		div {
-			grid-template-columns: 100px 100px 100px;
-			grid-template-rows: 100px 100px 100px 100px;
-		}
-	}
-	@media (max-width: 768px) {
-		div {
-			grid-template-columns: 100px 100px;
-			grid-template-rows: 100px 100px 100px 100px 100px;
-		}
-	}
-	@media (max-width: 620px) {
 		img {
 			height: 48px;
+			width: 48px;
+		}
+		span {
+			height: 80%;
+		}
+		section {
+			margin-bottom: 32px;
 		}
 	}
-	@media (max-width: 450px) {
-		img {
-			height: 32px;
+
+	/* Styles for screens up to 768px wide */
+	@media (max-width: 768px) {
+		section {
+			flex-direction: column;
+			align-items: center;
+			width: 90vw;
+			margin-bottom: 256px;
+		}
+		span {
+			width: 90vw;
+			margin-bottom: 16px;
+			font-size: 16px;
 		}
 		div {
-			grid-template-columns: 32px 32px 32px;
-			grid-template-rows: 32px 32px 32px 32px;
+			width: fit-content;
+		}
+		.info_img {
+			height: 64px;
+			width: 64px;
+			margin-bottom: 8px;
+		}
+		span h1 {
+			margin-bottom: 8px;
+		}
+	}
+
+	/* Styles for screens up to 480px wide */
+	@media (max-width: 480px) {
+		div {
+			grid-template-columns: repeat(4, 48px);
+			grid-template-rows: repeat(4, 48px);
+		}
+		span {
+			font-size: 16px;
 			padding: 16px;
-			gap: 12px;
+		}
+		img {
+			height: 40px;
+			width: 40px;
+		}
+	}
+
+	/* Styles for screens up to 360px wide */
+	@media (max-width: 360px) {
+		div {
+			grid-template-columns: repeat(4, 40px);
+			grid-template-rows: repeat(4, 40px);
+		}
+		span {
+			font-size: 12px;
+			padding: 12px;
+		}
+		img {
+			height: 32px;
+			width: 32px;
 		}
 	}
 </style>

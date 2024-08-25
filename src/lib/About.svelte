@@ -21,7 +21,7 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 96px 64px 16px 64px;
-		margin-bottom: 16px;
+		margin-bottom: 64px;
 	}
 	span {
 		width: 50%;
