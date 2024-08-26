@@ -4,26 +4,26 @@
 	import * as THREE from 'three';
 	import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-//yes
+
 	let canvas;
+
 	function threeJsIcon() {
 		const scene = new THREE.Scene();
 		const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 		const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
 
-		if (window.innerWidth <= 450) {
-			renderer.setSize(50, 50);
-		} else if (window.innerWidth <= 620) {
-			renderer.setSize(70, 70);
-		} else {
+		// Adjusting size for different screen widths
+		if (window.innerWidth <= 585) {
+			renderer.setSize(60, 60); // For 360px width screens
+		}
+		else {
 			renderer.setSize(100, 100);
 		}
 
 		renderer.setClearColor(new THREE.Color(0x000000), 0);
-
 		camera.position.z = 1.2;
 
-		// Lighting
+		// Lighting setup
 		const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 		scene.add(ambientLight);
 
@@ -53,7 +53,6 @@
 			const scaleFactor = 1 / maxDim;
 
 			object.scale.set(scaleFactor, scaleFactor, scaleFactor);
-
 			scene.add(object);
 
 			// Default animation setup
@@ -92,37 +91,43 @@
 
 		render();
 	}
+
 	onMount(() => {
 		threeJsIcon();
 		window.addEventListener('resize', threeJsIcon, false);
+
+		return () => {
+			window.removeEventListener('resize', threeJsIcon);
+		};
 	});
 </script>
 
 <Title id="technologies" text="Technologies" />
 <section>
 	<div class="tools">
-		<img src="/github.svg" alt="icon" />
-		<img src="/notion.svg" alt="icon" />
-		<img src="/paintdotnet.ico" alt="icon" />
+		<!-- Frontend Technologies -->
+		<img src="/svelte.svg" alt="icon" />
+		<img src="/sveltekit.png" alt="icon" />
+		<!-- The canvas where the 3D model of three.js will be rendered -->
+		<canvas bind:this={canvas} width="100" height="100"></canvas>
+		<img src="/jquery.svg" alt="icon" />
+
+		<!-- Backend Technologies -->
+		<img src="/flask.svg" alt="icon" />
+		<img src="/python.svg" alt="icon" />
+		<img src="/mongodb.svg" alt="icon" />
+		<img src="/php.svg" alt="icon" />
+		<img src="/mysql.svg" alt="icon" />
+
+		<!-- Tools -->
 		<img src="/vscode.svg" alt="icon" />
-		<img src="/vercel.svg" title="triangle company" alt="icon" />
-		<img src="/figma.svg" alt="icon" />
-		<img src="/blender.svg" alt="icon" />
+		<img src="/github.svg" alt="icon" />
 		<img src="/docker.svg" alt="icon" />
 		<img src="/ai.svg" alt="icon" />
-	</div>
-
-	<div class="languages">
-		<img src="/svelte.svg" alt="" />
-		<img src="/sveltekit.png" alt="" />
-		<img src="/mongodb.svg" alt="" />
-		<img src="/python.svg" alt="" />
-		<img src="/flask.svg" alt="" />
-		<img src="/mysql.svg" alt="" />
-		<img src="/php.svg" alt="" />
-		<img src="/jquery.svg" alt="" />
-		<!-- The canvas where the 3D model will be rendered -->
-		<canvas bind:this={canvas} width="100" height="100"></canvas>
+		<img src="/blender.svg" alt="icon" />
+		<img src="/vercel.svg" title="triangle company" alt="icon" />
+		<img src="/figma.svg" alt="icon" />
+		<img src="/notion.svg" alt="icon" />
 	</div>
 </section>
 
@@ -131,61 +136,46 @@
 		position: relative;
 		display: flex;
 		align-items: flex-start;
-		justify-content: space-between;
+		justify-content: center;
 		color: white;
-		margin-bottom: 16px;
+		margin-bottom: 64px;
 		width: 90vw;
+		max-width: 100%;
 	}
+
 	div {
 		display: grid;
-		grid-template-columns: 100px 100px 100px 100px 100px;
-		grid-template-rows: 100px 100px;
+		grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+		grid-auto-rows: 80px;
 		border: 1px solid var(--border);
 		border-radius: 16px;
-		width: 45%;
+		width: 100%;
+		max-width: 600px;
 		padding: 32px;
 		align-items: center;
 		justify-items: center;
 		justify-content: center;
+		gap: 16px;
 	}
+
 	img {
 		height: 64px;
 	}
+
 	canvas {
 		cursor: grab;
+		width: 100%; /* Ensures the canvas fills the grid cell */
+		height: 100%;
+		max-width: 100px; /* Limits the size of the canvas */
+		max-height: 100px; /* Limits the size of the canvas */
 	}
-	@media (max-width: 1250px) {
+	@media (max-width: 585px) {
 		div {
-			grid-template-columns: 100px 100px 100px 100px;
-			grid-template-rows: 100px 100px 100px;
+			grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+			grid-auto-rows: 60px;
 		}
-	}
-	@media (max-width: 1000px) {
-		div {
-			grid-template-columns: 100px 100px 100px;
-			grid-template-rows: 100px 100px 100px 100px;
-		}
-	}
-	@media (max-width: 768px) {
-		div {
-			grid-template-columns: 100px 100px;
-			grid-template-rows: 100px 100px 100px 100px 100px;
-		}
-	}
-	@media (max-width: 620px) {
 		img {
 			height: 48px;
-		}
-	}
-	@media (max-width: 450px) {
-		img {
-			height: 32px;
-		}
-		div {
-			grid-template-columns: 32px 32px 32px;
-			grid-template-rows: 32px 32px 32px 32px;
-			padding: 16px;
-			gap: 12px;
 		}
 	}
 </style>
