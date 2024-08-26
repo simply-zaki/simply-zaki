@@ -4,7 +4,7 @@
 	import * as THREE from 'three';
 	import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-
+//yes
 	let canvas;
 	function threeJsIcon() {
 		const scene = new THREE.Scene();
