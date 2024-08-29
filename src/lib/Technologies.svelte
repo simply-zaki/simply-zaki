@@ -110,24 +110,15 @@
 		<img src="/sveltekit.png" alt="icon" />
 		<!-- The canvas where the 3D model of three.js will be rendered -->
 		<canvas bind:this={canvas} width="100" height="100"></canvas>
-		<img src="/jquery.svg" alt="icon" />
 
 		<!-- Backend Technologies -->
 		<img src="/flask.svg" alt="icon" />
 		<img src="/python.svg" alt="icon" />
 		<img src="/mongodb.svg" alt="icon" />
-		<img src="/php.svg" alt="icon" />
-		<img src="/mysql.svg" alt="icon" />
-
 		<!-- Tools -->
-		<img src="/vscode.svg" alt="icon" />
-		<img src="/github.svg" alt="icon" />
 		<img src="/docker.svg" alt="icon" />
-		<img src="/ai.svg" alt="icon" />
 		<img src="/blender.svg" alt="icon" />
-		<img src="/vercel.svg" title="triangle company" alt="icon" />
-		<img src="/figma.svg" alt="icon" />
-		<img src="/notion.svg" alt="icon" />
+
 	</div>
 </section>
 
