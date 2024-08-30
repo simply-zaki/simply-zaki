@@ -3,9 +3,22 @@
 	let websites = [
 		{
 			src: '/simply calisthenics.png',
-			text: 'A minimalist fitness web app dedicated to calisthenics. It offers a comprehensive exercise library with detailed information and allows you to create, customize, and track your workouts. Designed to support your calisthenics journey, this app provides all the essential tools you need to progress and achieve your fitness goals',
-			link: 'https://simply-calisthenics.vercel.app/'
-		}
+			text: '1A minimalist fitness web app dedicated to calisthenics. It offers a comprehensive exercise library with detailed information and allows you to create, customize, and track your workouts. Designed to support your calisthenics journey, this app provides all the essential tools you need to progress and achieve your fitness goals',
+			link: 'https://simply-calisthenics.vercel.app/',
+			name: "Simply calisthenics"
+		},
+		{
+			src: '/simply calisthenics.png',
+			text: '2A minimalist fitness web app dedicated to calisthenics. It offers a comprehensive exercise library with detailed information and allows you to create, customize, and track your workouts. Designed to support your calisthenics journey, this app provides all the essential tools you need to progress and achieve your fitness goals',
+			link: 'https://simply-calisthenics.vercel.app/',
+			name: "Simply calisthenics"
+		},
+		{
+			src: '/simply calisthenics.png',
+			text: '3A minimalist fitness web app dedicated to calisthenics. It offers a comprehensive exercise library with detailed information and allows you to create, customize, and track your workouts. Designed to support your calisthenics journey, this app provides all the essential tools you need to progress and achieve your fitness goals',
+			link: 'https://simply-calisthenics.vercel.app/',
+			name: "Simply calisthenics"
+		},
 	];
 
 	let currentIndex = 0;
@@ -26,28 +39,47 @@
 <Title id="projects" text="Projects" />
 
 <section>
-	<div class="project-container">
-		<img class="project_img" src={websites[currentIndex].src} alt="projects" />
+	<img src={websites[currentIndex].src} alt={websites[currentIndex].src} />
 
-		<div class="link">
-			<a style="color: white;" href={websites[currentIndex].link}>Visit website</a>
-		</div>
-	</div>
-	<a style="margin-bottom: 16px;" href={websites[currentIndex].link}>Visit website</a>
-	<div class="text-container">
-		<p>{websites[currentIndex].text}</p>
-	</div>
+	<h1><a href={websites[currentIndex].link}>{websites[currentIndex].name}</a></h1>
+	<p>{websites[currentIndex].text}</p>
 	<div class="controls">
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<svg on:click={prev} tabindex="0" role="button" aria-label="Previous Project" class="arrow left-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="48" viewBox="0 0 12 24"><path fill="currentColor" d="M1.843 12.711L7.5 18.368l1.414-1.414l-4.95-4.95l4.95-4.95L7.5 5.64 1.843 11.297a1 1 0 0 0 0 1.414" /></svg>
-		<span>{currentIndex + 1} / {websites.length}</span>
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<svg on:click={next} tabindex="0" role="button" aria-label="Next Project" class="arrow right-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="48" viewBox="0 0 12 24"><path fill="currentColor" d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414" /></svg>
-	</div>
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<svg on:click={prev} tabindex="0" role="button" aria-label="Previous Project" class="arrow left-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="48" viewBox="0 0 12 24"><path fill="currentColor" d="M1.843 12.711L7.5 18.368l1.414-1.414l-4.95-4.95l4.95-4.95L7.5 5.64 1.843 11.297a1 1 0 0 0 0 1.414" /></svg>
+	<span class="controls_number">{currentIndex + 1} / {websites.length}</span>
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<svg on:click={next} tabindex="0" role="button" aria-label="Next Project" class="arrow right-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="48" viewBox="0 0 12 24"><path fill="currentColor" d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414" /></svg>
+</div>
 </section>
 
+
 <style>
-	span {
+	section {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+		padding: 32px;
+		border: 1px solid var(--border);
+		border-radius: 16px;
+		color: white;
+		background-color: black;
+		text-align: center;
+		margin-bottom: 100px;
+	}
+	section img {
+		border: 1px solid var(--border);
+		border-radius: 16px;
+		height: 192px;
+	}
+	section h1 {
+		margin-bottom: 16px;
+		margin-top: 16px;
+	}
+	section p {
+		font-size: 18px;
+	}
+	.controls_number {
 		font-size: 24px;
 		color: white;
 	}
@@ -55,8 +87,8 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-top: 16px;
 		width: 158px;
+		margin-top: 16px;
 	}
 	.arrow {
 		height: 48px;
@@ -74,91 +106,5 @@
 	.arrow:active {
 		transform: scale(0.9);
 		fill: #a9a9a9; /* Darker gray on active */
-	}
-	.project-container {
-		position: relative;
-		margin-bottom: 16px;
-	}
-	.project_img {
-		height: 192px;
-		width: 384px;
-		border: 1px solid var(--border);
-		border-radius: 16px;
-	}
-	.link {
-		display: flex;
-		opacity: 0;
-		position: absolute;
-		top: 0;
-		left: 0;
-		background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent yellow */
-		height: 100%;
-		width: 100%;
-		border-radius: 16px;
-		justify-content: center;
-		align-items: center;
-		transition: all 0.3s ease-in;
-	}
-	.project-container:hover .link {
-		opacity: 100;
-	}
-	.link a {
-		color: black;
-		text-decoration: none;
-		font-weight: bold;
-	}
-	.text-container {
-		display: flex;
-		align-items: center;
-		height: 150px;
-		overflow-y: auto;
-	}
-	p {
-		font-size: 24px;
-		text-align: center;
-		color: white;
-	}
-	section {
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		flex-direction: column;
-		padding: 32px;
-		border: 1px solid var(--border);
-		border-radius: 16px;
-		width: 90vw;
-		color: white;
-		background-color: black;
-		margin-bottom: 64px;
-	}
-	@media (max-width: 1080px) {
-		p {
-			font-size: 16px;
-		}
-		.arrow {
-			height: 32px;
-			width: 32px;
-		}
-		span {
-			font-size: 18px;
-		}
-		.controls {
-			width: 110px;
-		}
-	}
-	@media (max-width: 689px) {
-		.project_img {
-			height: 128px;
-			width: 256px;
-		}
-		p {
-			font-size: 12px;
-		}
-	}
-	@media (max-width: 380px) {
-		.text-container {
-			height: 120px;
-		}
 	}
 </style>

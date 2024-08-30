@@ -38,10 +38,10 @@
 <style>
 	ul {
 		display: grid;
-		grid-template-columns: 300px 300px;
-		grid-template-rows: 170px 170px;
+		grid-template-columns: 320px 320px;
+		grid-template-rows: 190px 190px;
 		align-items: flex-start;
-		margin-bottom: 64px;
+		margin-bottom: 100px;
 		gap: 16px;
 		height: auto;
 		width: auto;

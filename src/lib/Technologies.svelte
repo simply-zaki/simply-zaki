@@ -129,7 +129,7 @@
 		align-items: flex-start;
 		justify-content: center;
 		color: white;
-		margin-bottom: 64px;
+		margin-bottom: 100px;
 		width: 90vw;
 		max-width: 100%;
 	}
