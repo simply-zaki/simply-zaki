@@ -23,9 +23,8 @@
 		<Technologies />
 
 		<Skills />
-
-		<Footer />
 	</main>
+	<Footer />
 {/if}
 
 <style>
@@ -33,5 +32,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		padding: 32px;
 	}
 </style>
