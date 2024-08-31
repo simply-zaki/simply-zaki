@@ -71,13 +71,14 @@
 <style>
 	section {
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: space-between;
 		flex-direction: row;
 		padding: 32px;
 		border: 1px solid var(--border);
 		border-radius: 16px;
 		color: white;
+		width: 70vw;
 	}
 	section img {
 		border: 1px solid var(--border);

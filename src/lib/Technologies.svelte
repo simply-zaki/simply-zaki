@@ -14,10 +14,9 @@
 
 		// Adjusting size for different screen widths
 		if (window.innerWidth <= 585) {
-			renderer.setSize(60, 60); // For 360px width screens
-		}
-		else {
-			renderer.setSize(100, 100);
+			renderer.setSize(64, 60); // For 360px width screens
+		} else {
+			renderer.setSize(64, 64);
 		}
 
 		renderer.setClearColor(new THREE.Color(0x000000), 0);
@@ -104,22 +103,19 @@
 
 <Title id="technologies" text="Technologies" />
 <section>
-	<div class="tools">
-		<!-- Frontend Technologies -->
-		<img src="/svelte.svg" alt="icon" />
-		<img src="/sveltekit.png" alt="icon" />
-		<!-- The canvas where the 3D model of three.js will be rendered -->
-		<canvas bind:this={canvas} width="100" height="100"></canvas>
+	<!-- Frontend Technologies -->
+	<img src="/svelte.svg" alt="icon" />
+	<img src="/sveltekit.png" alt="icon" />
+	<!-- The canvas where the 3D model of three.js will be rendered -->
+	<canvas bind:this={canvas} width="100" height="100"></canvas>
 
-		<!-- Backend Technologies -->
-		<img src="/flask.svg" alt="icon" />
-		<img src="/python.svg" alt="icon" />
-		<img src="/mongodb.svg" alt="icon" />
-		<!-- Tools -->
-		<img src="/docker.svg" alt="icon" />
-		<img src="/blender.svg" alt="icon" />
-
-	</div>
+	<!-- Backend Technologies -->
+	<img src="/flask.svg" alt="icon" />
+	<img src="/python.svg" alt="icon" />
+	<img src="/mongodb.svg" alt="icon" />
+	<!-- Tools -->
+	<img src="/docker.svg" alt="icon" />
+	<img src="/blender.svg" alt="icon" />
 </section>
 
 <style>
@@ -128,26 +124,12 @@
 		display: flex;
 		align-items: flex-start;
 		justify-content: center;
-		color: white;
 		margin-bottom: 100px;
-		width: 90vw;
-		max-width: 100%;
-		
-	}
-
-	div {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-		grid-auto-rows: 80px;
 		border: 1px solid var(--border);
 		border-radius: 16px;
-		width: 100%;
-		max-width: 600px;
+		width: 70vw;
 		padding: 32px;
-		align-items: center;
-		justify-items: center;
-		justify-content: center;
-		gap: 16px;
+		gap: 32px;
 	}
 
 	img {
@@ -162,10 +144,6 @@
 		max-height: 100px; /* Limits the size of the canvas */
 	}
 	@media (max-width: 585px) {
-		div {
-			grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-			grid-auto-rows: 60px;
-		}
 		img {
 			height: 48px;
 		}

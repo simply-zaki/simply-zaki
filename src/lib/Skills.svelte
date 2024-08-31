@@ -38,13 +38,13 @@
 <style>
 	ul {
 		display: grid;
-		grid-template-columns: 320px 320px;
-		grid-template-rows: 190px 190px;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
 		align-items: flex-start;
 		margin-bottom: 32px;
 		gap: 16px;
 		height: auto;
-		width: auto;
+		width: 70vw;
 	}
 
 	li {
