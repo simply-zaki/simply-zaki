@@ -132,6 +132,7 @@
 		margin-bottom: 100px;
 		width: 90vw;
 		max-width: 100%;
+		
 	}
 
 	div {

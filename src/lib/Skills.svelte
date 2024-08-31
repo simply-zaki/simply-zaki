@@ -41,7 +41,7 @@
 		grid-template-columns: 320px 320px;
 		grid-template-rows: 190px 190px;
 		align-items: flex-start;
-		margin-bottom: 100px;
+		margin-bottom: 32px;
 		gap: 16px;
 		height: auto;
 		width: auto;
@@ -100,7 +100,6 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			width: 90vw;
 		}
 		li {
 			font-size: 12px;

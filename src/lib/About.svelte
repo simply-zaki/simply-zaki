@@ -9,10 +9,8 @@
 <style>
 	h1 {
 		font-size: 48px;
-		line-height: 1;
+		line-height: 1.2;
 		margin-bottom: 24px;
-	}
-	p {
 	}
 	section {
 		display: flex;
@@ -28,49 +26,19 @@
 		height: 384px;
 		cursor: grab;
 	}
-	@media (max-width: 1225px) {
-		img {
-			height: 384px;
-		}
-		h1 {
-			font-size: 64px;
-		}
-		p {
-			font-size: 16px;
-		}
-	}
-	@media (max-width: 912px) {
-		img {
+	@media (max-width: 1230px) {
+		img{
 			height: 256px;
 		}
-		h1 {
-			font-size: 48px;
-		}
-		p {
-			font-size: 12px;
-		}
-	}
-	@media (max-width: 768px) {
-		* {
-			text-align: center;
-		}
-		section {
-			flex-direction: column;
-		}
-		span {
-			order: 3;
-			width: 100%;
-		}
-		section {
-			padding-top: 64px;
-		}
-	}
-	@media (max-width: 400px) {
-		img {
-			height: 200px;
-		}
-		h1 {
+		h1{
 			font-size: 32px;
+		}
+	}
+	@media (max-width: 750px) {
+		section{
+			flex-direction: column;
+			text-align: center;
+			padding-top: 96px;
 		}
 	}
 </style>
