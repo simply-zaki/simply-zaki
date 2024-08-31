@@ -122,7 +122,8 @@
 	section {
 		position: relative;
 		display: flex;
-		align-items: flex-start;
+		flex-wrap: wrap; 
+		align-items: center; 
 		justify-content: center;
 		margin-bottom: 100px;
 		border: 1px solid var(--border);

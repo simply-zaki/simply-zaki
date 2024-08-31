@@ -40,5 +40,8 @@
 			text-align: center;
 			padding-top: 96px;
 		}
+		span{
+			width: 100%;
+		}
 	}
 </style>
