@@ -11,7 +11,7 @@
 		const scene = new THREE.Scene();
 		const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 		const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
-//testss
+//testsssssssssss
 		// Adjusting size for different screen widths
 		if (window.innerWidth <= 585) {
 			renderer.setSize(64, 60); // For 360px width screens
