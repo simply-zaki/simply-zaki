@@ -60,6 +60,7 @@
 		transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 		cursor: pointer;
 		position: relative; /* Ensure the ::before pseudo-element positions correctly */
+		background-color: black;
 	}
 
 	img {
@@ -76,6 +77,7 @@
 	li:hover {
 		transform: scale(1.05);
 		box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Softer, more diffused glow */
+		z-index: 999;
 	}
 
 	li:hover::before {
