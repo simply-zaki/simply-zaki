@@ -103,19 +103,43 @@
 
 <Title id="technologies" text="Technologies" />
 <section>
-	<!-- Frontend Technologiess -->
-	<img src="/svelte.svg" alt="icon" />
-	<img src="/sveltekit.png" alt="icon" />
+	<!-- Frontend Technologies -->
+	<div class="tech-item">
+		<img src="/svelte.svg" alt="Svelte" />
+		<span class="tech-name">Svelte</span>
+	</div>
+	<div class="tech-item">
+		<img src="/sveltekit.png" alt="SvelteKit" />
+		<span class="tech-name">SvelteKit</span>
+	</div>
 	<!-- The canvas where the 3D model of three.js will be rendered -->
-	<canvas bind:this={canvas} width="100" height="100"></canvas>
+	<div class="tech-item">
+		<canvas bind:this={canvas} width="100" height="100"></canvas>
+		<span class="tech-name">Three.js</span>
+	</div>
 
 	<!-- Backend Technologies -->
-	<img src="/flask.svg" alt="icon" />
-	<img src="/python.svg" alt="icon" />
-	<img src="/mongodb.svg" alt="icon" />
+	<div class="tech-item">
+		<img src="/flask.svg" alt="Flask" />
+		<span class="tech-name">Flask</span>
+	</div>
+	<div class="tech-item">
+		<img src="/python.svg" alt="Python" />
+		<span class="tech-name">Python</span>
+	</div>
+	<div class="tech-item">
+		<img src="/mongodb.svg" alt="MongoDB" />
+		<span class="tech-name">MongoDB</span>
+	</div>
 	<!-- Tools -->
-	<img src="/docker.svg" alt="icon" />
-	<img src="/blender.svg" alt="icon" />
+	<div class="tech-item">
+		<img src="/docker.svg" alt="Docker" />
+		<span class="tech-name">Docker</span>
+	</div>
+	<div class="tech-item">
+		<img src="/blender.svg" alt="Blender" />
+		<span class="tech-name">Blender</span>
+	</div>
 </section>
 
 <style>
@@ -133,20 +157,41 @@
 		gap: 32px;
 	}
 
-	img {
-		height: 64px;
+	.tech-item {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		transition: transform 0.3s ease;
 	}
 
-	canvas {
-		cursor: grab;
-		width: 100%; /* Ensures the canvas fills the grid cell */
-		height: 100%;
-		max-width: 100px; /* Limits the size of the canvas */
-		max-height: 100px; /* Limits the size of the canvas */
+	.tech-item:hover {
+		transform: translateY(-5px);
 	}
+
+	img, canvas {
+		height: 64px;
+		width: 64px;
+		object-fit: contain;
+	}
+
+	.tech-name {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		position: absolute;
+		bottom: -20px;
+		font-size: 12px;
+		color: var(--text-color);
+	}
+
+	.tech-item:hover .tech-name {
+		opacity: 1;
+	}
+
 	@media (max-width: 585px) {
-		img {
+		img, canvas {
 			height: 48px;
+			width: 48px;
 		}
 	}
 </style>
