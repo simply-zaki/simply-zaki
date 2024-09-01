@@ -76,7 +76,7 @@
 
 	li:hover {
 		transform: scale(1.05);
-		box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Softer, more diffused glow */
+		box-shadow: 0 0 15px rgba(173, 216, 230, 0.3); /* Blueish-grey glow */
 		z-index: 999;
 	}
 
@@ -88,7 +88,7 @@
 		width: 100%;
 		height: 100%;
 		border-radius: 16px;
-		box-shadow: 0 0 20px rgba(255, 255, 255, 0.15); /* Very subtle, soft glow */
+		box-shadow: 0 0 20px rgba(173, 216, 230, 0.15); /* Subtle blueish-grey glow */
 		z-index: -1;
 		pointer-events: none;
 	}

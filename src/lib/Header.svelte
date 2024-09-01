@@ -24,7 +24,7 @@
 		top: 0;
 		display: flex;
 		align-items: center;
-		padding: 16px;
+		padding: 24px;
 		border-bottom: 1px solid var(--border);
 		width: 100vw;
 		background-color: black;

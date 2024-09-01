@@ -83,7 +83,7 @@
 		width: 70vw;
 	}
 	section img {
-		border: 1px solid var(--border);
+		border: 1px solid rgba(255, 255, 255, 0.1); /* Decreased border opacity for a subtler effect */
 		border-radius: 16px;
 		height: 128px;
 	}
@@ -100,6 +100,12 @@
 		text-align: start;
 		flex-direction: column;
 		padding: 0 16px 0 16px;
+	}
+	.project-info h1 {
+		margin-bottom: 16px; /* Add space between header and paragraph */
+	}
+	.project-info p {
+		line-height: 175%; /* Increase line height for better readability */
 	}
 	.animating {
 		animation:
@@ -127,7 +133,7 @@
 		position: relative;
 	}
 	.dot.active {
-		background-color: white;
+		background-color: #e6f2ff; /* Changed from white to a light blueish white */
 		transform: scale(1.2);
 	}
 	.dot:hover {
