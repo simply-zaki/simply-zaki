@@ -103,7 +103,7 @@
 
 <Title id="technologies" text="Technologies" />
 <section>
-	<!-- Frontend Technologies -->
+	<!-- Frontend Technologiess -->
 	<img src="/svelte.svg" alt="icon" />
 	<img src="/sveltekit.png" alt="icon" />
 	<!-- The canvas where the 3D model of three.js will be rendered -->
