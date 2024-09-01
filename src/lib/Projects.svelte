@@ -99,7 +99,7 @@
 		display: flex;
 		text-align: start;
 		flex-direction: column;
-		padding: 0 16px 0 16px;
+		padding: 0 16px;
 	}
 	.project-info h1 {
 		margin-bottom: 16px; /* Add space between header and paragraph */
