@@ -124,7 +124,7 @@
 		display: flex;
 		flex-wrap: wrap; 
 		align-items: center; 
-		justify-content: center;
+		justify-content: space-between;
 		margin-bottom: 100px;
 		border: 1px solid var(--border);
 		border-radius: 16px;
