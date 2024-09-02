@@ -19,7 +19,7 @@
 		justify-content: space-evenly;
 		align-items: center;
 		padding-top: 128px;
-		margin-bottom: 100px;
+		margin-bottom: 135px;
 	}
 	main {
 		width: 50%;

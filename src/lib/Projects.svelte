@@ -30,7 +30,7 @@
 		animating = true;
 		setTimeout(() => {
 			animating = false;
-		}, 1200); // Increasedtotal animation duration to 1.2 seconds
+		}, 1200);
 	}
 
 	function changeProject(index) {
@@ -39,7 +39,7 @@
 			setTimeout(() => {
 				currentIndex = index;
 				showFullText = false;
-			}, 600); // Increased delay to 600ms (half of the total animation time)
+			}, 600);
 		}
 	}
 
@@ -100,7 +100,7 @@
 		width: 70vw;
 	}
 	section img {
-		border: 1px solid rgba(255, 255, 255, 0.1); /* Decreased border opacity for a subtler effect */
+		border: 1px solid rgba(255, 255, 255, 0.1);
 		border-radius: 16px;
 		height: 128px;
 	}
@@ -110,7 +110,7 @@
 		align-items: center;
 		width: 158px;
 		margin-top: 16px;
-		margin-bottom: 100px;
+		margin-bottom: 135px; 
 	}
 	.project-info {
 		display: flex;
@@ -119,10 +119,10 @@
 		padding: 0 16px;
 	}
 	.project-info h1 {
-		margin-bottom: 16px; /* Add space between header and paragraph */
+		margin-bottom: 16px;
 	}
 	.project-info p {
-		line-height: 175%; /* Increase line height for better readability */
+		line-height: 175%;
 	}
 	.animating {
 		animation:
@@ -150,7 +150,7 @@
 		position: relative;
 	}
 	.dot.active {
-		background-color: #e6f2ff; /* Changed from white to a light blueish white */
+		background-color: #e6f2ff;
 		transform: scale(1.2);
 	}
 	.dot:hover {

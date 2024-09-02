@@ -7,7 +7,7 @@
 
 <style>
     	h1 {
-		scroll-margin-top: 100px;
+		scroll-margin-top: 128px;
 		margin-bottom: 32px;
 		text-align: center;
         border-bottom: 3px solid white;

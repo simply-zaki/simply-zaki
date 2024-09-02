@@ -149,7 +149,7 @@
 		flex-wrap: wrap; 
 		align-items: center; 
 		justify-content: space-between;
-		margin-bottom: 100px;
+		margin-bottom: 135px;
 		border: 1px solid var(--border);
 		border-radius: 16px;
 		width: 70vw;
