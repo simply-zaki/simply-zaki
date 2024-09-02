@@ -24,6 +24,7 @@
 	let currentIndex = 0;
 	let animating = false;
 	let hoveredIndex = -1;
+	let showFullText = false;
 
 	function animate() {
 		animating = true;
@@ -37,8 +38,17 @@
 			animate();
 			setTimeout(() => {
 				currentIndex = index;
+				showFullText = false;
 			}, 600); // Increased delay to 600ms (half of the total animation time)
 		}
+	}
+
+	function toggleFullText() {
+		showFullText = !showFullText;
+	}
+
+	function truncateText(text, maxLength = 150) {
+		return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
 	}
 </script>
 
@@ -48,7 +58,7 @@
 	<img src={websites[currentIndex].src} alt={websites[currentIndex].name} />
 	<span class="project-info">
 		<h1>
-			<a href={websites[currentIndex].link} >
+			<a href={websites[currentIndex].link}>
 				{websites[currentIndex].name}
 			</a>
 			<svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -56,7 +66,14 @@
 				<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
 			</svg>
 		</h1>
-		<p>{websites[currentIndex].text}</p>
+		<p>
+			{showFullText ? websites[currentIndex].text : truncateText(websites[currentIndex].text)}
+			{#if websites[currentIndex].text.length > 150}
+				<span class="more" on:click={toggleFullText}>
+					{showFullText ? 'show less' : 'more'}
+				</span>
+			{/if}
+		</p>
 	</span>
 </section>
 
@@ -67,7 +84,7 @@
 				<span class="dot-preview">{websites[index].name}</span>
 			{/if}
 		</div>
-		{/each}
+	{/each}
 </div>
 
 <style>
@@ -155,6 +172,13 @@
 		vertical-align: middle;
 		margin-left: 4px;
 	}
+	.more {
+		color: #007bff;
+		cursor: pointer;
+	}
+	.more:hover {
+		text-decoration: underline;
+	}
 	@keyframes fadeOut {
 		from {
 			opacity: 1;
@@ -183,6 +207,7 @@
 	@media (max-width: 970px) {
 		section {
 			flex-direction: column;
+			align-items: center;
 		}
 		section h1 {
 			margin: 16px 0 16px 0;
