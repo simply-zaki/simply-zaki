@@ -131,6 +131,10 @@
 		<img src="/mongodb.svg" alt="MongoDB" />
 		<span class="tech-name">MongoDB</span>
 	</div>
+	<div class="tech-item">
+		<img src="/mysql.svg" alt="MySQL" />
+		<span class="tech-name">MySQL</span>
+	</div>
 	<!-- Tools -->
 	<div class="tech-item">
 		<img src="/docker.svg" alt="Docker" />
@@ -140,6 +144,7 @@
 		<img src="/blender.svg" alt="Blender" />
 		<span class="tech-name">Blender</span>
 	</div>
+	
 </section>
 
 <style>
@@ -148,7 +153,7 @@
 		display: flex;
 		flex-wrap: wrap; 
 		align-items: center; 
-		justify-content: space-between;
+		justify-content: center;
 		margin-bottom: 135px;
 		border: 1px solid var(--border);
 		border-radius: 16px;
