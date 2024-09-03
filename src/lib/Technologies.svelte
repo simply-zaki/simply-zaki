@@ -4,17 +4,16 @@
 	import * as THREE from 'three';
 	import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-//test
+
 	let canvas;
 
 	function threeJsIcon() {
 		const scene = new THREE.Scene();
 		const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 		const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
-//pls
-		// Adjusting size for different screen widths
+
 		if (window.innerWidth <= 585) {
-			renderer.setSize(64, 60); // For 360px width screens
+			renderer.setSize(48, 48); 
 		} else {
 			renderer.setSize(64, 64);
 		}
@@ -192,7 +191,11 @@
 	.tech-item:hover .tech-name {
 		opacity: 1;
 	}
-
+	@media (max-width: 970px) {
+		section{
+			padding: 24px;
+		}
+	}
 	@media (max-width: 585px) {
 		img, canvas {
 			height: 48px;

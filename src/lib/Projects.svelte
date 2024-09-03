@@ -208,9 +208,13 @@
 		section {
 			flex-direction: column;
 			align-items: center;
+			padding: 24px;
 		}
 		section h1 {
 			margin: 16px 0 16px 0;
+		}
+		section img{
+			height: 96px;
 		}
 		.project-info {
 			align-items: center;
