@@ -9,8 +9,6 @@
 
 {#if loaded === true}
 	<header transition:fade={{duration:800, delay:500}} >
-		<span>simply zaki</span>
-		<img src="/cat.svg" alt="icon" />
 		<a href="#about">About</a>
 		<a href="#projects">Projects</a>
 		<a href="#technologies">Technologies</a>
@@ -24,16 +22,12 @@
 		top: 0;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		padding: 24px;
 		border-bottom: 1px solid var(--border);
 		width: 100vw;
 		background-color: black;
 		z-index: 999;
-	}
-	img {
-		margin-right: auto;
-		height: 48px;
-		margin-left: 8px;
 	}
 	a {
 		margin-right: 16px;
@@ -50,15 +44,6 @@
 	@media (max-width: 600px) {
 		a {
 			font-size: 12px;
-		}
-		span {
-			display: none;
-		}
-	}
-	@media (max-width: 384px) {
-		img {
-			height: 32px;
-			margin-left: 0;
 		}
 	}
 </style>
