@@ -111,6 +111,11 @@
 		<img src="/sveltekit.png" alt="SvelteKit" />
 		<span class="tech-name">SvelteKit</span>
 	</div>
+
+	<div class="tech-item">
+		<img src="/tailwind.svg" alt="Tailwind" />
+		<span class="tech-name">Tailwind</span>
+	</div>
 	<!-- The canvas where the 3D model of three.js will be rendered -->
 	<div class="tech-item">
 		<canvas bind:this={canvas} width="100" height="100"></canvas>
